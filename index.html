@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TempTracker Premium</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <main class="app-shell">
+    <section class="glass-card">
+      <div class="header-row">
+        <div>
+          <p class="eyebrow">CLIMA EN TIEMPO REAL</p>
+          <h1>TempTracker Premium</h1>
+          <p class="subtitle">Consulta el clima con una interfaz moderna y elegante.</p>
+        </div>
+        <div class="status-pill">Online</div>
+      </div>
+
+      <div class="search-panel">
+        <div class="input-wrap">
+          <span class="input-icon">📍</span>
+          <input type="text" id="cityInput" placeholder="Ingresa una ciudad" />
+        </div>
+        <button onclick="getWeather()">Buscar</button>
+      </div>
+
+      <div id="loader" class="loader hidden">
+        <div class="loader-dot"></div>
+        <span>Cargando clima...</span>
+      </div>
+
+      <p id="error" class="error"></p>
+
+      <div id="weatherCard" class="weather-card hidden">
+        <div class="hero-weather">
+          <div class="hero-left">
+            <div class="icon-frame">
+              <img id="icon" src="" alt="icono clima" />
+            </div>
+
+            <div class="hero-text">
+              <h2 id="city"></h2>
+              <p id="country" class="country-line"></p>
+              <p id="condition" class="condition-line"></p>
+            </div>
+          </div>
+
+          <div class="hero-temp">
+            <h3 id="temp"></h3>
+            <p>Clima actual</p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="info-label">Humedad</span>
+            <strong><span id="humidity"></span>%</strong>
+          </div>
+
+          <div class="info-card">
+            <span class="info-label">Viento</span>
+            <strong><span id="wind"></span> km/h</strong>
+          </div>
+
+          <div class="info-card">
+            <span class="info-label">Sensación térmica</span>
+            <strong><span id="feelslike"></span>°C</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
